@@ -46,7 +46,7 @@ I am a Sri Lankan Software Engineering graduate currently preparing for the **JL
 ## Connect with Me
 - **LinkedIn:** [https://www.linkedin.com/in/akila-abeysinghe-418338205/]
 - **Email:** [bhanuabeysinghe244@gmail.com]
-- **Portfolio Live Site:** [Insert Vercel/Live Link]
+- **Portfolio Live Site:** [https://my-portfolio-topaz-delta-92.vercel.app/]
 
 ---
 *Created with 🤍 by Akila Abeysinghe*
