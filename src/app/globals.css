@@ -1,26 +1,40 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Slate-950 base */
+  --background: #020617; 
+  --foreground: #f8fafc;
+  
+  /* Tokyo Blue Palette */
+  --tokyo-blue: #0077B6;
+  --tokyo-blue-hover: #023e8a;
+  
+  /* Glassmorphism */
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(2, 6, 23, 0.7);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  
+  --color-tokyo-blue: var(--tokyo-blue);
+  --color-tokyo-blue-hover: var(--tokyo-blue-hover);
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-jp: var(--font-noto-sans-jp), sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  @apply bg-slate-950/70 backdrop-blur-md border border-slate-800/50 shadow-xl;
+}
+
+.glass-card {
+  @apply bg-slate-900/40 backdrop-blur-sm border border-slate-700/30 hover:border-tokyo-blue/50 transition-colors duration-300;
 }
