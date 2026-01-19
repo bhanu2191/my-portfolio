@@ -5,6 +5,7 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 import { Github, Linkedin, Mail, FileText, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GlassCard } from "@/components/ui/GlassCard";
+import Image from "next/image";
 import Link from "next/link";
 
 export function Sidebar() {
@@ -23,9 +24,13 @@ export function Sidebar() {
                 {/* Profile Card */}
                 <GlassCard className="flex flex-row lg:flex-col items-center text-center gap-4 relative overflow-hidden group p-4 lg:p-6">
                     <div className="absolute inset-0 bg-gradient-to-br from-tokyo-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative z-10 w-16 h-16 lg:w-24 lg:h-24 rounded-full bg-slate-800 border-2 border-tokyo-blue p-1 shrink-0">
-                        {/* Placeholder for Profile Image */}
-                        <div className="w-full h-full rounded-full bg-slate-700 flex items-center justify-center text-xl lg:text-2xl font-bold">AA</div>
+                    <div className="relative z-10 w-16 h-16 lg:w-24 lg:h-24 rounded-full bg-slate-800 border-2 border-tokyo-blue p-1 shrink-0 overflow-hidden">
+                        <Image
+                            src="/images/profile.webp"
+                            alt="Akila Abeysinghe"
+                            fill
+                            className="object-cover rounded-full"
+                        />
                     </div>
                     <div className="relative z-10 text-left lg:text-center">
                         <h1 className="text-lg lg:text-xl font-bold text-white tracking-tight">Akila Abeysinghe</h1>
