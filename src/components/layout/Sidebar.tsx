@@ -27,7 +27,7 @@ export function Sidebar() {
                     <div className="relative z-10 w-16 h-16 lg:w-24 lg:h-24 rounded-full bg-slate-800 border-2 border-tokyo-blue p-1 shrink-0 overflow-hidden">
                         <Image
                             src="/images/profile.webp"
-                            alt="Akila Abeysinghe"
+                            alt="Akila "
                             fill
                             className="object-cover rounded-full"
                         />
