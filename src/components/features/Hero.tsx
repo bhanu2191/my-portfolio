@@ -9,7 +9,7 @@ export function Hero() {
     const { t } = useLanguage();
 
     return (
-        <section id="about" className="min-h-screen flex flex-col justify-center px-6 lg:px-20 py-20 relative overflow-hidden">
+        <section id="about" className="min-h-screen flex flex-col justify-center px-6 lg:px-20 py-32 lg:py-20 relative overflow-hidden">
             {/* Cinematic Background - Floating Keyframes & Tech Icons */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <motion.div 
@@ -79,20 +79,20 @@ export function Hero() {
                 />
             </div>
 
-            {/* Viewfinder Corners */}
-            <div className="absolute top-10 left-10 w-8 h-8 border-t-2 border-l-2 border-white/20" />
-            <div className="absolute top-10 right-10 w-8 h-8 border-t-2 border-r-2 border-white/20" />
-            <div className="absolute bottom-10 left-10 w-8 h-8 border-b-2 border-l-2 border-white/20" />
-            <div className="absolute bottom-10 right-10 w-8 h-8 border-b-2 border-r-2 border-white/20" />
+            {/* Viewfinder Corners - Scaled for Mobile */}
+            <div className="absolute top-4 left-4 lg:top-10 lg:left-10 w-4 h-4 lg:w-8 lg:h-8 border-t-2 border-l-2 border-white/20" />
+            <div className="absolute top-4 right-4 lg:top-10 lg:right-10 w-4 h-4 lg:w-8 lg:h-8 border-t-2 border-r-2 border-white/20" />
+            <div className="absolute bottom-4 left-4 lg:bottom-10 lg:left-10 w-4 h-4 lg:w-8 lg:h-8 border-b-2 border-l-2 border-white/20" />
+            <div className="absolute bottom-4 right-4 lg:bottom-10 lg:right-10 w-4 h-4 lg:w-8 lg:h-8 border-b-2 border-r-2 border-white/20" />
 
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
-                className="max-w-5xl relative z-10"
+                className="max-w-5xl relative z-10 mx-auto text-center lg:text-left"
             >
                 {/* Mode Indicator */}
-                <div className="flex items-center gap-4 mb-8">
+                <div className="flex items-center justify-center lg:justify-start gap-4 mb-8">
                     <div className="flex items-center gap-2 px-3 py-1 rounded bg-red-500/10 border border-red-500/20 text-red-500 text-[10px] font-black uppercase tracking-widest">
                         <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                         REC
@@ -113,7 +113,7 @@ export function Hero() {
                         <span>{t.hero.role}</span>
                     </div>
 
-                    <h1 className="text-[2.5rem] md:text-6xl lg:text-9xl font-black tracking-tighter mb-6 lg:mb-8 leading-[0.95] uppercase overflow-hidden">
+                    <h1 className="text-[2.75rem] md:text-6xl lg:text-8xl font-black tracking-tighter mb-6 lg:mb-8 leading-[0.95] uppercase overflow-hidden">
                         <motion.span
                             initial={{ y: 30 }}
                             whileInView={{ y: 0 }}
@@ -134,16 +134,16 @@ export function Hero() {
                         </motion.span>
                     </h1>
 
-                    <p className="text-slate-400 text-xs lg:text-xl max-w-sm lg:max-w-xl mb-8 lg:mb-10 leading-relaxed font-medium">
+                    <p className="text-slate-400 text-xs lg:text-xl max-w-sm lg:max-w-xl mb-8 lg:mb-10 leading-relaxed font-medium mx-auto lg:mx-0">
                         {t.hero.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-4 lg:gap-8">
+                    <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-8">
                         <motion.a
                             whileHover={{ scale: 1.05, letterSpacing: "0.1em" }}
                             whileTap={{ scale: 0.95 }}
                             href="#video-editing"
-                            className="px-6 py-3 lg:px-12 lg:py-6 rounded-none border-2 border-tokyo-blue bg-tokyo-blue/10 text-white font-black uppercase tracking-widest text-[10px] lg:text-xs hover:bg-tokyo-blue transition-all shadow-[0_0_30px_rgba(0,180,216,0.2)] flex items-center gap-3 lg:gap-4 group"
+                            className="w-full sm:w-auto px-6 py-3 lg:px-12 lg:py-6 rounded-none border-2 border-tokyo-blue bg-tokyo-blue/10 text-white font-black uppercase tracking-widest text-[10px] lg:text-xs hover:bg-tokyo-blue transition-all shadow-[0_0_30px_rgba(0,180,216,0.2)] flex items-center justify-center gap-3 lg:gap-4 group"
                         >
                             <Play size={16} fill="currentColor" className="lg:w-5 lg:h-5" />
                             {t.hero.cta}
@@ -151,7 +151,7 @@ export function Hero() {
                         <motion.a
                             whileHover={{ x: 5 }}
                             href="#contact"
-                            className="px-6 py-3 lg:px-12 lg:py-6 rounded-none border-2 border-white/10 text-white font-black uppercase tracking-widest transition-all hover:border-white text-[10px] lg:text-xs flex items-center gap-4"
+                            className="w-full sm:w-auto px-6 py-3 lg:px-12 lg:py-6 rounded-none border-2 border-white/10 text-white font-black uppercase tracking-widest transition-all hover:border-white text-[10px] lg:text-xs flex items-center justify-center gap-4"
                         >
                             Contact Me
                         </motion.a>
