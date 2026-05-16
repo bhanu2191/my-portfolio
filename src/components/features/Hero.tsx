@@ -135,7 +135,7 @@ export function Hero() {
                     </h1>
 
                     <p className="text-slate-400 text-xs lg:text-xl max-w-sm lg:max-w-xl mb-8 lg:mb-10 leading-relaxed font-medium">
-                        {t.hero.subtitle}
+                        {t.hero.description}
                     </p>
 
                     <div className="flex flex-wrap gap-4 lg:gap-8">
