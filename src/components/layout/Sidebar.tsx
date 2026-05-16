@@ -1,86 +1,107 @@
 "use client";
 
-import React from "react";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/components/providers/LanguageProvider";
-import { Github, Linkedin, Mail, FileText, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GlassCard } from "@/components/ui/GlassCard";
 import Image from "next/image";
 import Link from "next/link";
+import { Github, Linkedin, FileText, User, Video, Code, Cpu, Globe } from "lucide-react";
 
 export function Sidebar() {
     const { t, language, setLanguage } = useLanguage();
 
     const navItems = [
-        { label: t.nav.about, href: "#about" },
-        { label: t.nav.stack, href: "#stack" },
-        { label: t.nav.projects, href: "#projects" },
+        { label: t.nav.about, href: "#about", icon: <User size={18} /> },
+        { label: t.nav.video, href: "#video-editing", icon: <Video size={18} /> },
+        { label: t.nav.projects, href: "#projects", icon: <Code size={18} /> },
+        { label: t.nav.stack, href: "#stack", icon: <Cpu size={18} /> },
     ];
 
     return (
         <aside className="lg:fixed lg:left-0 lg:top-0 lg:z-50 lg:h-screen lg:w-80 w-full p-4 lg:p-6 flex flex-col pointer-events-auto bg-slate-950/80 backdrop-blur-sm lg:bg-transparent lg:backdrop-blur-none border-b lg:border-none border-slate-800">
-            {/* Mobile/Desktop Layout Handling */}
             <div className="h-full flex flex-col gap-6">
-                {/* Profile Card */}
-                <GlassCard className="flex flex-row lg:flex-col items-center text-center gap-4 relative overflow-hidden group p-4 lg:p-6">
-                    <div className="absolute inset-0 bg-gradient-to-br from-tokyo-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative z-10 w-16 h-16 lg:w-24 lg:h-24 rounded-full bg-slate-800 border-2 border-tokyo-blue p-1 shrink-0 overflow-hidden">
-                        <Image
-                            src="/images/profile.webp"
-                            alt="Akila "
-                            fill
-                            className="object-cover rounded-full"
-                        />
-                    </div>
-                    <div className="relative z-10 text-left lg:text-center">
-                        <h1 className="text-lg lg:text-xl font-bold text-white tracking-tight">Akila Abeysinghe</h1>
-                        <p className="text-sm text-slate-400 mt-1">{t.hero.role}</p>
+                {/* Profile Section */}
+                <GlassCard className="flex flex-col items-center text-center gap-4 relative overflow-hidden group p-6 border-white/5">
+                    <div className="absolute inset-0 bg-gradient-to-br from-tokyo-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    <div className="relative w-24 h-24 lg:w-28 lg:h-28">
+                        <div className="absolute inset-0 bg-tokyo-blue/20 rounded-full blur-xl animate-pulse" />
+                        <div className="relative w-full h-full rounded-full border-2 border-white/10 overflow-hidden">
+                            <Image
+                                src="/images/profile.webp"
+                                alt="Akila Abeysinghe"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                        {/* Live Status */}
+                        <div className="absolute bottom-1 right-1 w-4 h-4 bg-green-500 border-2 border-slate-950 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
                     </div>
 
-                    <div className="flex gap-3 relative z-10 ml-auto lg:ml-0">
-                        <Link href="https://github.com" target="_blank" className="p-2 rounded-full hover:bg-slate-800 text-slate-400 hover:text-white transition-colors">
-                            <Github size={18} />
+                    <div className="relative z-10">
+                        <h1 className="text-xl font-black text-white tracking-tight uppercase leading-tight">Akila Abeysinghe</h1>
+                        <p className="text-[10px] text-tokyo-blue font-bold mt-1 uppercase tracking-widest">{t.hero.role}</p>
+                    </div>
+
+                    <div className="flex gap-4 relative z-10 pt-2">
+                        <Link href="https://github.com/bhanu2191" target="_blank" className="text-slate-500 hover:text-white transition-colors">
+                            <Github size={20} />
                         </Link>
-                        <Link href="https://linkedin.com" target="_blank" className="p-2 rounded-full hover:bg-slate-800 text-slate-400 hover:text-white transition-colors">
-                            <Linkedin size={18} />
+                        <Link href="https://linkedin.com" target="_blank" className="text-slate-500 hover:text-white transition-colors">
+                            <Linkedin size={20} />
                         </Link>
                     </div>
                 </GlassCard>
 
-                {/* Navigation - Hidden on Mobile for now, or could use a details/summary dropdown */}
-                <nav className="flex-1 flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
+                {/* Main Navigation */}
+                <nav className="flex-1 space-y-2">
+                    <div className="text-[10px] text-slate-600 font-bold uppercase tracking-[0.2em] mb-4 px-4">Navigation</div>
                     {navItems.map((item) => (
                         <Link
                             key={item.href}
                             href={item.href}
-                            className="group flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:text-tokyo-blue hover:bg-slate-900/50 transition-all font-medium"
+                            className="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all group border border-transparent hover:border-white/5"
                         >
-                            <span className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-tokyo-blue transition-colors" />
-                            {item.label}
+                            <span className="text-slate-500 group-hover:text-tokyo-blue transition-colors">
+                                {item.icon}
+                            </span>
+                            <span className="text-sm font-bold uppercase tracking-widest">{item.label}</span>
                         </Link>
                     ))}
                 </nav>
 
-                {/* Language Toggler & Resume */}
-                <div className="hidden lg:flex flex-col gap-4 mt-auto">
-                    <GlassCard className="p-4 flex items-center justify-between" hoverEffect={false}>
-                        <span className="text-sm font-medium text-slate-400 flex items-center gap-2">
-                            <Globe size={16} /> Language
-                        </span>
-                        <button
-                            onClick={() => setLanguage(language === "en" ? "jp" : "en")}
-                            className="relative px-3 py-1 rounded-full bg-slate-800 flex items-center gap-2 hover:bg-slate-700 transition"
-                        >
-                            <span className={cn("text-xs font-bold transition-colors", language === "en" ? "text-tokyo-blue" : "text-slate-500")}>EN</span>
-                            <span className="w-[1px] h-3 bg-slate-600" />
-                            <span className={cn("text-xs font-bold transition-colors", language === "jp" ? "text-tokyo-blue" : "text-slate-500")}>JP</span>
-                        </button>
-                    </GlassCard>
+                {/* Footer Controls */}
+                <div className="mt-auto space-y-4">
+                    <div className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/[0.02] border border-white/5">
+                        <div className="flex items-center gap-2 text-slate-500">
+                            <Globe size={14} />
+                            <span className="text-[10px] font-bold uppercase tracking-widest">Language</span>
+                        </div>
+                        <div className="flex gap-1">
+                            {['en', 'jp'].map((lang) => (
+                                <button
+                                    key={lang}
+                                    onClick={() => setLanguage(lang as any)}
+                                    className={cn(
+                                        "px-2 py-0.5 rounded text-[10px] font-black uppercase transition-all",
+                                        language === lang ? "bg-tokyo-blue text-white" : "text-slate-600 hover:text-slate-400"
+                                    )}
+                                >
+                                    {lang}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
 
-                    <button className="w-full py-3 px-4 rounded-xl bg-tokyo-blue hover:bg-tokyo-blue-hover text-white font-bold shadow-lg shadow-tokyo-blue/20 flex items-center justify-center gap-2 transition-all active:scale-95">
-                        <FileText size={18} />
-                        Download Resume
-                    </button>
+                    <a 
+                        href="/images/resume.pdf" 
+                        download 
+                        className="w-full py-4 rounded-xl bg-white text-black font-black uppercase tracking-widest text-[11px] shadow-[0_10px_30px_rgba(255,255,255,0.05)] flex items-center justify-center gap-2 hover:bg-tokyo-blue hover:text-white transition-all group"
+                    >
+                        <FileText size={16} />
+                        Download CV
+                    </a>
                 </div>
             </div>
         </aside>

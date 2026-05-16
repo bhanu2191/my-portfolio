@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_JP } from "next/font/google"; // Import Japanese font
+import { Inter, Noto_Sans_JP, Outfit } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 const notoSansJP = Noto_Sans_JP({
@@ -14,8 +20,8 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "Akila Abeysinghe | Senior Full-Stack Engineer",
-  description: "Portfolio of Akila Abeysinghe, a Software Engineering graduate targeting senior roles in the Japanese tech market. Expert in Next.js, Go, and Distributed Systems.",
+  title: "Akila Abeysinghe | Video Editor & Software Engineer",
+  description: "Portfolio of Akila Abeysinghe, a professional Video Editor and Software Engineer specializing in premium content creation and enterprise management systems.",
 };
 
 import { Providers } from "@/components/providers/Providers";
@@ -29,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${notoSansJP.variable} antialiased bg-slate-950 text-slate-100 selection:bg-tokyo-blue selection:text-white`}
+        className={`${inter.variable} ${outfit.variable} ${notoSansJP.variable} antialiased bg-slate-950 text-slate-100 selection:bg-tokyo-blue selection:text-white`}
       >
         <Providers>
           <Sidebar />

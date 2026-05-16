@@ -4,26 +4,26 @@ import React from "react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { motion } from "framer-motion";
-import { Code2, Cloud, Server, Database, Cpu, Globe } from "lucide-react";
+import { Code2, Cloud, Server, Database, Cpu, Globe, Video } from "lucide-react";
 
 export function TechStack() {
     const { t } = useLanguage();
 
     const skills = [
         {
+            category: "Creative & Editing",
+            icon: <Video className="text-red-400" size={24} />,
+            items: ["Adobe Premiere Pro", "Adobe After Effects", "DaVinci Resolve", "Color Grading", "Post-Production", "Motion Graphics"],
+        },
+        {
             category: "Core & Frontend",
             icon: <Code2 className="text-tokyo-blue" size={24} />,
-            items: ["Java", "Go (Golang)", "TypeScript", "Next.js 15", "React", "React Native"],
+            items: ["Java", "Go (Golang)", "TypeScript", "Next.js 15", "React", "Electron", "Tailwind CSS"],
         },
         {
-            category: "Cloud & DevOps",
+            category: "Cloud & Systems",
             icon: <Cloud className="text-indigo-400" size={24} />,
-            items: ["AWS (Lambda, EC2, S3)", "Terraform", "Docker", "Kubernetes", "CI/CD (GitHub Actions)"],
-        },
-        {
-            category: "Systems & Backend",
-            icon: <Server className="text-emerald-400" size={24} />,
-            items: ["Distributed Systems", "Microservices", "gRPC / Protobuf", "PostgreSQL", "Redis", "Kafka"],
+            items: ["AWS (Lambda, S3)", "Docker", "Supabase", "PostgreSQL", "Distributed Systems", "gRPC"],
         },
     ];
 
