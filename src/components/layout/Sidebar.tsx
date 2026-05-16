@@ -50,6 +50,9 @@ export function Sidebar() {
                             <Link href="https://github.com/bhanu2191" target="_blank" className="text-slate-500 hover:text-white transition-colors">
                                 <Github size={16} />
                             </Link>
+                            <Link href="https://linkedin.com" target="_blank" className="text-slate-500 hover:text-white transition-colors">
+                                <Linkedin size={16} />
+                            </Link>
                         </div>
                     </div>
 
