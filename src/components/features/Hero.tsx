@@ -3,8 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/components/providers/LanguageProvider";
-import { ArrowRight, Terminal, Play, Cpu, Globe, Github } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Terminal, Play, Cpu, Globe, Github } from "lucide-react";
 
 export function Hero() {
     const { t } = useLanguage();
@@ -106,56 +105,58 @@ export function Hero() {
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: false }}
+                    viewport={{ once: false, amount: 0.1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-tokyo-blue text-xs font-bold tracking-[0.2em] uppercase mb-6 backdrop-blur-sm">
-                        <Terminal size={14} className="animate-pulse" />
+                    <div className="inline-flex items-center gap-2 px-3 py-1 lg:px-4 lg:py-1.5 rounded-full bg-white/5 border border-white/10 text-tokyo-blue text-[9px] lg:text-xs font-bold tracking-[0.2em] uppercase mb-4 lg:mb-6 backdrop-blur-sm">
+                        <Terminal size={14} className="animate-pulse hidden sm:block" />
                         <span>{t.hero.role}</span>
                     </div>
 
-                    <h1 className="text-6xl lg:text-9xl font-black tracking-tighter mb-8 leading-[0.85] uppercase overflow-hidden">
+                    <h1 className="text-[2.5rem] md:text-6xl lg:text-9xl font-black tracking-tighter mb-6 lg:mb-8 leading-[0.95] uppercase overflow-hidden">
                         <motion.span
-                            initial={{ y: 100 }}
-                            animate={{ y: 0 }}
+                            initial={{ y: 30 }}
+                            whileInView={{ y: 0 }}
+                            viewport={{ once: false, amount: 0.1 }}
                             transition={{ duration: 0.8, delay: 0.1, ease: "circOut" }}
-                            className="block text-gradient py-2"
+                            className="block text-gradient py-1"
                         >
                             Video Editor
                         </motion.span>
                         <motion.span
-                            initial={{ y: 100 }}
-                            animate={{ y: 0 }}
+                            initial={{ y: 30 }}
+                            whileInView={{ y: 0 }}
+                            viewport={{ once: false, amount: 0.1 }}
                             transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
                             className="block opacity-80"
                         >
                             & Developer
                         </motion.span>
                     </h1>
+
+                    <p className="text-slate-400 text-xs lg:text-xl max-w-sm lg:max-w-xl mb-8 lg:mb-10 leading-relaxed font-medium">
+                        {t.hero.subtitle}
+                    </p>
+
+                    <div className="flex flex-wrap gap-4 lg:gap-8">
+                        <motion.a
+                            whileHover={{ scale: 1.05, letterSpacing: "0.1em" }}
+                            whileTap={{ scale: 0.95 }}
+                            href="#video-editing"
+                            className="px-6 py-3 lg:px-12 lg:py-6 rounded-none border-2 border-tokyo-blue bg-tokyo-blue/10 text-white font-black uppercase tracking-widest text-[10px] lg:text-xs hover:bg-tokyo-blue transition-all shadow-[0_0_30px_rgba(0,180,216,0.2)] flex items-center gap-3 lg:gap-4 group"
+                        >
+                            <Play size={16} fill="currentColor" className="lg:w-5 lg:h-5" />
+                            {t.hero.cta}
+                        </motion.a>
+                        <motion.a
+                            whileHover={{ x: 5 }}
+                            href="#contact"
+                            className="px-6 py-3 lg:px-12 lg:py-6 rounded-none border-2 border-white/10 text-white font-black uppercase tracking-widest transition-all hover:border-white text-[10px] lg:text-xs flex items-center gap-4"
+                        >
+                            Contact Me
+                        </motion.a>
+                    </div>
                 </motion.div>
-
-                <p className="text-lg lg:text-2xl text-slate-400 max-w-3xl leading-relaxed mb-12 font-medium">
-                    {t.hero.description}
-                </p>
-
-                <div className="flex flex-wrap gap-8">
-                    <motion.a
-                        whileHover={{ scale: 1.05, letterSpacing: "0.1em" }}
-                        whileTap={{ scale: 0.95 }}
-                        href="#video-editing"
-                        className="px-12 py-6 rounded-none border-2 border-tokyo-blue bg-tokyo-blue/10 text-white font-black uppercase tracking-widest hover:bg-tokyo-blue transition-all shadow-[0_0_30px_rgba(0,180,216,0.2)] flex items-center gap-4 group"
-                    >
-                        <Play size={20} fill="currentColor" />
-                        {t.hero.cta}
-                    </motion.a>
-                    <motion.a
-                        whileHover={{ x: 5 }}
-                        href="#contact"
-                        className="px-12 py-6 rounded-none border-2 border-white/10 text-white font-black uppercase tracking-widest transition-all hover:border-white flex items-center gap-4"
-                    >
-                        Contact Me
-                    </motion.a>
-                </div>
             </motion.div>
 
             {/* Bottom Timeline Decor */}

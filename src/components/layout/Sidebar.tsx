@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { GlassCard } from "@/components/ui/GlassCard";
 import Image from "next/image";
 import Link from "next/link";
-import { Github, Linkedin, FileText, User, Video, Code, Cpu, Globe, Mail } from "lucide-react";
+import { Github, Linkedin, FileText, User, Video, Code, Cpu, Globe, Mail, Download } from "lucide-react";
 
 export function Sidebar() {
     const { t, language, setLanguage } = useLanguage();
@@ -109,10 +109,10 @@ export function Sidebar() {
                     <a 
                         href="/images/resume.pdf" 
                         download 
-                        className="flex-1 lg:flex-none py-2.5 lg:py-4 rounded-xl bg-white text-black font-black uppercase tracking-widest text-[9px] lg:text-[11px] shadow-[0_10px_30px_rgba(255,255,255,0.05)] flex items-center justify-center gap-2 hover:bg-tokyo-blue hover:text-white transition-all group whitespace-nowrap"
+                        className="flex-1 lg:flex-none py-2.5 lg:py-4 rounded-xl bg-tokyo-blue text-white font-black uppercase tracking-widest text-[9px] lg:text-[11px] shadow-[0_10px_30px_rgba(0,180,216,0.2)] flex items-center justify-center gap-2 hover:bg-white hover:text-black transition-all group whitespace-nowrap"
                     >
-                        <FileText size={14} className="lg:w-4 lg:h-4" />
-                        CV
+                        <Download size={14} className="lg:w-4 lg:h-4 group-hover:translate-y-0.5 transition-transform" />
+                        Resume
                     </a>
                 </div>
             </div>
