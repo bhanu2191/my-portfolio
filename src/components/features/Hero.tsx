@@ -105,7 +105,8 @@ export function Hero() {
 
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-tokyo-blue text-xs font-bold tracking-[0.2em] uppercase mb-6 backdrop-blur-sm">

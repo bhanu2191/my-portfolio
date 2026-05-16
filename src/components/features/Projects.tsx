@@ -71,7 +71,7 @@ export function Projects() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     className="mb-12"
                 >
                     <h2 className="text-3xl lg:text-4xl font-bold mb-4 flex items-center gap-3">
@@ -88,7 +88,7 @@ export function Projects() {
                             key={project.id}
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false }}
                             transition={{ duration: 0.5 }}
                         >
                             <GlassCard className="p-0 overflow-hidden flex flex-col lg:flex-row min-h-[500px]">
@@ -163,7 +163,7 @@ export function Projects() {
                                 key={project.id}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: false }}
                             >
                                 <GlassCard className="h-full flex flex-col justify-between group">
                                     <div>

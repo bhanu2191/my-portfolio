@@ -15,7 +15,7 @@ export function VideoPortfolio() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     className="mb-12"
                 >
                     <h2 className="text-3xl lg:text-4xl font-bold mb-4 flex items-center gap-3">
@@ -30,7 +30,7 @@ export function VideoPortfolio() {
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         className="flex flex-col gap-4"
                     >
                         <GlassCard className="p-0 overflow-hidden aspect-[9/16] relative border-white/5 shadow-2xl">
@@ -56,7 +56,7 @@ export function VideoPortfolio() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         className="flex flex-col gap-4"
                     >
                         <GlassCard className="p-0 overflow-hidden aspect-[9/16] relative flex items-center justify-center bg-slate-900 border-dashed border-2 border-white/5 group transition-all hover:border-tokyo-blue/30 shadow-2xl">
@@ -87,7 +87,7 @@ export function VideoPortfolio() {
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         className="flex flex-col gap-4"
                     >
                         <GlassCard className="p-8 h-full flex flex-col justify-center bg-tokyo-blue/5 border-tokyo-blue/20 group shadow-2xl">
