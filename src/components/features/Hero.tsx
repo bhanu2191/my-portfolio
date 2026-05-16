@@ -9,7 +9,7 @@ export function Hero() {
     const { t } = useLanguage();
 
     return (
-        <section id="about" className="min-h-screen flex flex-col justify-center px-6 lg:px-20 py-32 lg:py-20 relative overflow-hidden">
+        <section id="about" className="min-h-screen flex flex-col justify-center px-6 lg:px-20 py-20 relative overflow-hidden">
             {/* Cinematic Background - Floating Keyframes & Tech Icons */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <motion.div 
@@ -89,10 +89,10 @@ export function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
-                className="max-w-5xl relative z-10 mx-auto text-center lg:text-left"
+                className="max-w-5xl relative z-10"
             >
                 {/* Mode Indicator */}
-                <div className="flex items-center justify-center lg:justify-start gap-4 mb-8">
+                <div className="flex items-center gap-4 mb-8">
                     <div className="flex items-center gap-2 px-3 py-1 rounded bg-red-500/10 border border-red-500/20 text-red-500 text-[10px] font-black uppercase tracking-widest">
                         <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                         REC
@@ -134,11 +134,11 @@ export function Hero() {
                         </motion.span>
                     </h1>
 
-                    <p className="text-slate-400 text-xs lg:text-xl max-w-sm lg:max-w-xl mb-8 lg:mb-10 leading-relaxed font-medium mx-auto lg:mx-0">
+                    <p className="text-slate-400 text-xs lg:text-xl max-w-sm lg:max-w-xl mb-8 lg:mb-10 leading-relaxed font-medium">
                         {t.hero.description}
                     </p>
 
-                    <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-8">
+                    <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 lg:gap-8">
                         <motion.a
                             whileHover={{ scale: 1.05, letterSpacing: "0.1em" }}
                             whileTap={{ scale: 0.95 }}
